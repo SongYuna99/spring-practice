@@ -8,7 +8,6 @@ public class Friend {
 		this.name = name;
 	}
 
-	// toString
 	@Override
 	public String toString() {
 		return "Friend [name=" + name + "]";

@@ -25,7 +25,7 @@ public class XmlConfigTest {
 
 	private static void testApplicationContext02() {
 		ApplicationContext ac = new ClassPathXmlApplicationContext(
-				"com/poscodx/container/user/applicationContext02.xml");
+				"com/poscodx/container/config/user/applicationContext02.xml");
 
 		User user = null;
 
@@ -53,19 +53,19 @@ public class XmlConfigTest {
 		// ------- Parameter가 2개인 생성자로 생성된 Bean 가져오기 I -------
 		user = (User) ac.getBean("user3");
 		System.out.println(user);
-		
+
 		// ------- Parameter가 2개인 생성자로 생성된 Bean 가져오기 II -------
 		user = (User) ac.getBean("user4");
 		System.out.println(user);
-		
+
 		// ------- setter로 생성된 Bean 가져오기 I -------
 		user = (User) ac.getBean("user5");
 		System.out.println(user);
-		
+
 		// ------- setter로 생성된 Bean 가져오기 II : DI 사용 -------
 		user = (User) ac.getBean("user6");
 		System.out.println(user);
-		
+
 		// ------- setter로 생성된 Bean 가져오기 III : Collection Porperty -------
 		user = (User) ac.getBean("user7");
 		System.out.println(user);
@@ -73,7 +73,7 @@ public class XmlConfigTest {
 
 	private static void testApplicationContext01() {
 		ApplicationContext ac = new ClassPathXmlApplicationContext(
-				"com/poscodx/container/user/applicationContext01.xml");
+				"com/poscodx/container/config/user/applicationContext01.xml");
 
 		User user = null;
 
@@ -87,14 +87,14 @@ public class XmlConfigTest {
 
 	private static void testBeanFactory02() {
 		BeanFactory bf = new XmlBeanFactory(
-				new ClassPathResource("com/poscodx/container/user/applicationContext02.xml"));
+				new ClassPathResource("com/poscodx/container/config/user/applicationContext02.xml"));
 		User user = bf.getBean(User.class);
 		System.out.println(user.getName());
 	}
 
 	private static void testBeanFactory01() {
 		BeanFactory bf = new XmlBeanFactory(
-				new ClassPathResource("com/poscodx/container/user/applicationContext01.xml"));
+				new ClassPathResource("com/poscodx/container/config/user/applicationContext01.xml"));
 		User user = bf.getBean(User.class);
 		System.out.println(user.getName());
 	}
