@@ -11,7 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration("classpath:com/poscodx/container/config/soundsystem/applicationContext.xml")
-public class CDPlayerXmlCofigTest {
+public class CDPlayerXmlConfigTest {
 	@Autowired
 	private CDPlayer cdPlayer;
 
