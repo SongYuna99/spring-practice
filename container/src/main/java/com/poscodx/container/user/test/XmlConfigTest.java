@@ -29,6 +29,7 @@ public class XmlConfigTest {
 
 		User user = null;
 
+		// ------- 기본 생성자로 Bean 생성된 가져오기 -------
 		// id로 Bean 가져오기 -> 자동으로 만들어지지 않음(명시적)
 		user = (User) ac.getBean("user");
 		System.out.println(user.getName());
@@ -38,8 +39,36 @@ public class XmlConfigTest {
 		System.out.println(user.getName());
 
 		// type으로 Bean 가져오기
-		user = ac.getBean(User.class);
+		// 같은 타입의 bean이 2개이상 있으면 type으로 가져오기는 실패
+		user = ac.getBean("user", User.class);
 		System.out.println(user.getName());
+
+		// ------- Parameter가 1개인 생성자로 생성된 Bean 가져오기 -------
+		user = (User) ac.getBean("user2");
+		System.out.println(user.getName());
+
+		user = ac.getBean("user2", User.class);
+		System.out.println(user.getName());
+
+		// ------- Parameter가 2개인 생성자로 생성된 Bean 가져오기 I -------
+		user = (User) ac.getBean("user3");
+		System.out.println(user);
+		
+		// ------- Parameter가 2개인 생성자로 생성된 Bean 가져오기 II -------
+		user = (User) ac.getBean("user4");
+		System.out.println(user);
+		
+		// ------- setter로 생성된 Bean 가져오기 I -------
+		user = (User) ac.getBean("user5");
+		System.out.println(user);
+		
+		// ------- setter로 생성된 Bean 가져오기 II : DI 사용 -------
+		user = (User) ac.getBean("user6");
+		System.out.println(user);
+		
+		// ------- setter로 생성된 Bean 가져오기 III : Collection Porperty -------
+		user = (User) ac.getBean("user7");
+		System.out.println(user);
 	}
 
 	private static void testApplicationContext01() {
