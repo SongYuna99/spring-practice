@@ -10,9 +10,7 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:annotation-config />
-	<context:component-scan
-		base-package="com.poscodx.fileupload.controller" />
+	<mvc:annotation-driven></mvc:annotation-driven>
 
 	<beans>
 		<bean id="viewResolver"
@@ -24,7 +22,8 @@
 		</bean>
 
 		<!-- mulitpart resolver -->
-		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<bean id="multipartResolver"
+			class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 			<!-- 최대업로드 가능한 바이트크기 -->
 			<property name="maxUploadSize" value="52428800" />
 
@@ -34,6 +33,12 @@
 			<!-- defaultEncoding -->
 			<property name="defaultEncoding" value="utf-8" />
 		</bean>
+
+		<!-- url-resource mapping -->
+		<mvc:resources mapping="/images/**" location="file:/mysite-uploads/"></mvc:resources>
+
+		<context:annotation-config />
+		<context:component-scan base-package="com.poscodx.fileupload.controller" />
 	</beans>
 
 </beans>
