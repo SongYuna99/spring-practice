@@ -34,6 +34,8 @@
 		└ applicationContext01.xml (Explicit) 
 		
 [src/test/java]
+	com.poscodx.container.videosystem
+		└ DVDPlayerJavaCofigTest.java
 	com.poscodx.container.soundsystem
 		└ CDPlayerXmlCofigTest.java
 		└ CDPlayerJavaConfigTest.java

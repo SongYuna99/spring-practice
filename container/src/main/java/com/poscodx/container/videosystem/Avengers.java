@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Avengers implements DigitalVideoDisc {
-	private String title = "어벤져스";
+	private String title = "Avengers";
 	private String studio = "MARVEL";
 
 	@Override

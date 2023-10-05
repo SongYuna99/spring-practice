@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 public class DVDPlayer {
 	@Autowired
 	private DigitalVideoDisc dvd;
-	
+
+	public DVDPlayer(DigitalVideoDisc dvd) {
+		this.dvd = dvd;
+	}
+
 	public String play() {
 		return dvd.play();
 	}
