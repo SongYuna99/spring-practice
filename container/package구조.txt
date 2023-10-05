@@ -35,6 +35,7 @@
 		
 [src/test/java]
 	com.poscodx.container.videosystem
+		└ DVDPlayerXmlCofigTest.java
 		└ DVDPlayerJavaCofigTest.java
 	com.poscodx.container.soundsystem
 		└ CDPlayerXmlCofigTest.java
